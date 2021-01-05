@@ -1,0 +1,106 @@
+3a.
+class Node:
+    def __init__(self, val,name):
+        self.val = val
+        self.name = name
+        self.next = None
+        
+class Linklist:
+    def __init__(self):
+        self.head = None
+        self.last=None
+        
+    def inserthead(self, node):
+        if self.head is None:
+            self.head = node
+            self.head.next=None
+            
+    def insertlast(self, node):
+        if self.head.next is None:
+            self.last=node
+            self.head.next=self.last
+            
+    def insertlist(self, node):
+        temp=self.head
+        while temp:
+            if temp.next==self.last:
+                temp.next=node
+                node.next=self.last
+            temp=temp.next
+            
+    def delete(self, node):
+        head =self.head
+        if(val==self.head.val):
+            self.head=self.head.next
+        else:
+            while(val!=head.next.val and head.next!=None):
+                head=head.next
+            if(head.next.val==val):
+                prev=head
+                head=head.next
+                prev.next=head.next
+                
+    def recursion(self,head):
+        if head!=None:
+            self.recursion(head.next)
+            print(head.val,head.name)
+                
+    def countlist(self):
+        c=0
+        tem=self.head
+        while tem:
+            c=c+1
+            tem=tem.next
+        print(c)
+        
+    def sortlist(self):
+        current=self.head
+        index=None
+        while current !=None:
+            index=current.next
+            while(index !=None):
+                if(current.name>index.name):
+                    temp,temp1=current.name,current.val
+                    current.name,current.val=index.name,index.val
+                    index.name,index.val=temp,temp1
+                index=index.next
+            current=current.next
+                
+    def dispList(self):
+        tmp = self.head
+        while tmp:
+            print("Roll Number:%s\nName:%s"%(str(tmp.val),str(tmp.name)))
+            tmp = tmp.next
+
+if __name__ == "__main__":
+    lst = Linklist()
+    print("{:20s}{}".format(" ","PRERANA READERS CLUB"))
+    val,name=input("enter IdNumber and name of head:").split(" ")
+    lst.inserthead(Node(val,name.upper()))
+    val,name=input("enter IdNumber and name of in-charge:").split(" ")
+    lst.insertlast(Node(val,name.upper()))
+    print("1.add member=insert\n2.delete=delete\n3.total members=count\n4.reverse list=reverse\n5.sort list=sort\ndisplay list=final list")
+    step=True
+    while step:
+        op=input("enter operation:")
+        if op=="insert":
+            val,name=input("enter IdNumber and name of head:").split(" ")
+            lst.insertlist(Node(val,name.upper()))
+        elif op=="sort":
+            lst.sortlist()
+            lst.dispList()
+        elif op=="reverse":
+            print("list after reverse")
+            lst.recursion(lst.head)
+        elif op=="count":
+            print("members count")
+            lst.countlist()
+        elif op=="delete":
+            val,name=input("enter IdNumber and name of head:").split(" ")
+            lst.inserthead(Node(val,name.upper()))
+            print("list after deleting in-charge")
+            lst.dispList()
+        elif op=="final list":
+            lst.dispList()
+        else:
+            step=False

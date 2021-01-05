@@ -1,0 +1,72 @@
+2a.
+#Unordered linear search
+element=int(input("enter Roll Number:"))
+def un_search(list,element):
+    for i in range(len(list)):
+        if(list[i]==element):
+            print(element,"is atttended for training in ",i+1,"place")
+            break
+    else:
+       print(element,"is not atttended for training") 
+result=un_search([10,12,11,25,23,20,18,19,13,17,21,22,24],element)
+
+
+# Ordered linear search
+element=int(input("enter Roll Number:"))
+def or_search(list,element):
+    for i in range(len(list)):
+        if(list[i]==element):
+            return i
+            break
+        elif(list[i]>element):
+            return -1
+    return -1
+result=or_search([10,11,12,13,17,18,19,20,21,22,23,24,25],element)
+if(result==-1):
+    print(element,"is not atttended for training")
+else:
+    print(element,"is atttended for training in",result+1,"place")
+
+
+2b.
+# Recursive 
+num=int(input("enter the number:"))
+def binary(l,h,list,num):
+    if l<=h:
+        mid=(l+h)//2
+        if list[mid]==num:
+            return mid
+        elif list[mid]>num:
+            return binary(l,mid-1,list,num)
+        else:
+            return binary(mid+1,h,list,num)
+    
+    else:
+        return -1
+list=[10,11,12,13,17,18,19,20,21,22,23,24,25]
+result=binary(0,len(list)-1,list,num)
+if result==-1:
+    print(num,"is not atttended for training")
+else:
+    print(num,"is atttended for training in ",result+1,"place")
+
+
+#Non recursive
+num=int(input("enter the number:"))
+def binary(l,h,list,num):
+    for l in range(h+1):
+        mid=(l+h)//2
+        if(list[mid]==num):
+            return mid
+        elif list[mid]>num:
+            h=mid-1
+        else:
+                l=mid+1
+    return -1
+list=[10,11,12,13,17,18,19,20,21,22,23,24,25]
+result=binary(0,len(list)-1,list,num)
+if result==-1:
+    print(num,"is not atttended for training")
+else:
+    print(num,"is atttended for training in",result+1,"place")
+

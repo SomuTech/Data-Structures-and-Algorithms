@@ -1,4 +1,4 @@
-//Linear search implementation to search a student in an array
+//Linear search implementation to search a student in an array (unordered)
 import java.util.*;
 public class LinearSearch
 {

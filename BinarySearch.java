@@ -1,5 +1,5 @@
-//binary search implementation to search whether a student is present or not
-import java.util.*;
+//binary search implementation to search whether a student is present or not (iterative)
+ import java.util.*;
 public class BinarySearch 
 {
     static int binary(int rollNo[],int key,int n)

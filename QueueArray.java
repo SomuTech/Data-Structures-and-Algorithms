@@ -1,3 +1,4 @@
+//Implementation of Queues using arrays
 import java.util.*;
 public class QueueArray 
 {

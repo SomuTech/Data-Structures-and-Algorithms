@@ -1,3 +1,4 @@
+//Quick sort alogorithm 
 import java.util.*;
 class QuickSort
 {
@@ -29,7 +30,12 @@ class QuickSort
 		int arr[]={45,78,69,-2,65,74};
 		QuickSort obj1=new QuickSort();
 		obj1.quick(arr,0,arr.length-1);
+		System.out.println("Sorted array");
 		for(int i:arr)
 			System.out.print(i+" ");
 	}
 }
+
+/*Output:
+Sorted array:
+-2 45 65 69 74 78

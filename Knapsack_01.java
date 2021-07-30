@@ -39,7 +39,7 @@ class Knapsack_01
 
     public static void main(String args[])
     {
-        System.out.println("enter no.of profits:");
+        System.out.print("enter no.of profits:");
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
         int wt[]=new int[n],p[]=new int[n];
@@ -54,3 +54,16 @@ class Knapsack_01
         System.out.println("Maximum profit:"+Knapsack_01.algorithm(W,wt,p,n));
     }
 }
+
+
+/*
+OUTPUT:
+enter no.of profits:5
+enter weight and value:45 12
+enter weight and value:74 25
+enter weight and value:14 36
+enter weight and value:12 21
+enter weight and value:78 45
+enter max weight of knapsack:150
+Maximum profit:139
+*/
